@@ -55,3 +55,13 @@ const director1: Directors = {
 
 // Log the director1 object to the console
 console.log(director1);
+// Define the interface for the printTeacher function
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Implement the printTeacher function
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return ;
+};
+
