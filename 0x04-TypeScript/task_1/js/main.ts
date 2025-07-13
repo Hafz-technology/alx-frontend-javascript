@@ -42,3 +42,18 @@ console.log(teacher4);
 // Attempting to modify readonly properties will result in a TypeScript error:
 // teacher3.firstName = 'Jonathan'; // Error: Cannot assign to 'firstName' because it is a read-only property.
 
+interface Directors extends Teacher {
+  numberOfReports: number; // Directors must have a numberOfReports attribute
+}
+
+// Example usage of the Directors interface
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17, // Specific to Directors interface
+};
+
+// Log the director1 object to the console
+console.log(director1);
