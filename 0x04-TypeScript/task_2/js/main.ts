@@ -122,3 +122,32 @@ console.log("Director's workDirectorTasks:", director.workDirectorTasks());
 
 const directorFromStringSalary = createEmployee('$500');
 console.log("Director (from string salary) workFromHome:", directorFromStringSalary.workFromHome());
+
+
+/**
+ * Type predicate to check if an employee is a Director.
+ * @param {Director | Teacher} employee - The employee instance to check.
+ * @returns {employee is Director} - True if the employee is a Director, false otherwise.
+ */
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+/**
+ * Executes the appropriate work task based on the employee's type.
+ * @param {Director | Teacher} employee - The employee instance.
+ * @returns {string} - The result of the work task.
+ */
+function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+}
+
+// New expected results for isDirector and executeWork
+console.log("--- New Function Tests ---");
+console.log(executeWork(createEmployee(200))); // Expected: Getting to work
+console.log(executeWork(createEmployee(1000))); // Expected: Getting to director tasks
+
