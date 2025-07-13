@@ -151,3 +151,31 @@ console.log("--- New Function Tests ---");
 console.log(executeWork(createEmployee(200))); // Expected: Getting to work
 console.log(executeWork(createEmployee(1000))); // Expected: Getting to director tasks
 
+
+
+// Define a String literal type for Subjects.
+type Subjects = 'Math' | 'History';
+
+/**
+ * Teaches a class based on the provided subject.
+ * @param {Subjects} todayClass - The subject to teach (either 'Math' or 'History').
+ * @returns {string} - A string indicating which class is being taught.
+ */
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // This part is technically unreachable due to the `Subjects` type,
+  // but a default or error handling could be added for robustness
+  // if `todayClass` were of a broader type.
+  return 'Unknown subject';
+}
+
+// New expected results for Subjects and teachClass
+console.log("--- Subjects and teachClass Tests ---");
+console.log(teachClass('Math'));    // Expected: Teaching Math
+console.log(teachClass('History')); // Expected: Teaching History
+
+
