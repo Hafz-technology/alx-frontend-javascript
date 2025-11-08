@@ -100,18 +100,22 @@ class Student implements StudentClass {
 
 
 
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+interface PrintTeacherArgs {
+  firstName: string;
+  lastName: string;
 }
 
 
- function printTeacher(firstName: string, lastName: string): string {
+interface printTeacherFunction {
+  ({ firstName, lastName }: PrintTeacherArgs): string;
+}
+
+
+function printTeacher({ firstName, lastName }: PrintTeacherArgs): string {
   const firstInitial = firstName.charAt(0).toUpperCase();
   return `${firstInitial}. ${lastName}`;
 }
 
 // Example usage (optional, for testing)
-console.log(printTeacher("John", "Doe")); // Output: J. Doe
-console.log(printTeacher("Sarah", "Smith")); // Output: S. Smith
-
-
+console.log(printTeacher({ firstName: "John", lastName: "Doe" })); 
+console.log(printTeacher({ firstName: "Sarah", lastName: "Smith" })); 
