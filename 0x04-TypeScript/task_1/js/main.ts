@@ -62,9 +62,9 @@ interface printTeacherFunction {
 
 // Implement the printTeacher function
 // interface Director extends Teacher
-const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
-  return ;
-};
+// const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+//   return ;
+// };
 
 // Interface for the constructor of StudentClass
 interface StudentConstructor {
@@ -105,9 +105,13 @@ interface printTeacherFunction {
 }
 
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+ function printTeacher(firstName: string, lastName: string): string {
   const firstInitial = firstName.charAt(0).toUpperCase();
   return `${firstInitial}. ${lastName}`;
-};
+}
+
+// Example usage (optional, for testing)
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
+console.log(printTeacher("Sarah", "Smith")); // Output: S. Smith
 
 
