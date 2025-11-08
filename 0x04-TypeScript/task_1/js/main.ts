@@ -95,3 +95,19 @@ class Student implements StudentClass {
     return this._firstName;
   }
 }
+
+
+
+
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  const firstInitial = firstName.charAt(0).toUpperCase();
+  return `${firstInitial}. ${lastName}`;
+};
+
+
