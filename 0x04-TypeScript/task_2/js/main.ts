@@ -180,3 +180,4 @@ console.log(teachClass('History')); // Expected: Teaching History
 
 
 // task_2/js/main.ts doesn't contain: ["if (salary < 500)"]
+// task_2/js/main.ts doesn't contain: ["todayClass:Subjects"]
