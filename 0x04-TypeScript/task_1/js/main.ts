@@ -61,6 +61,7 @@ interface printTeacherFunction {
 }
 
 // Implement the printTeacher function
+// interface Director extends Teacher
 const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
   return ;
 };
