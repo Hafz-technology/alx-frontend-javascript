@@ -121,3 +121,69 @@ console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 console.log(printTeacher({ firstName: "Sarah", lastName: "Smith" })); 
 
 // ["return `${firstName}. ${lastName}`"]
+
+
+
+
+
+
+
+
+
+
+
+// Interface describing the constructor for StudentClass
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface describing the structure of a StudentClass instance
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Class implementation
+class StudentClass implements StudentClassInterface {
+  // Use private properties to store the names
+  private firstName: string;
+  private lastName: string;
+
+  /**
+   * Initializes a new student.
+   * @param firstName - The student's first name.
+   * @param lastName - The student's last name.
+   */
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  /**
+   * Returns a string indicating the student is working.
+   * @returns The string "Currently working".
+   */
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  /**
+   * Returns the student's first name.
+   * @returns The student's first name.
+   */
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Example of how to use the interfaces (optional, for verification)
+
+// The 'StudentClass' class itself matches the StudentClassConstructor interface
+const StudentClassCtor: StudentClassConstructor = StudentClass;
+
+// Create an instance using the constructor type
+const student: StudentClassInterface = new StudentClassCtor('Guillaume', 'Salva');
+
+// Using the methods from the interface
+console.log(student.displayName());
+console.log(student.workOnHomework());
