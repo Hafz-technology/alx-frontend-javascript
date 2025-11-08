@@ -119,3 +119,5 @@ function printTeacher({ firstName, lastName }: PrintTeacherArgs): string {
 // Example usage (optional, for testing)
 console.log(printTeacher({ firstName: "John", lastName: "Doe" })); 
 console.log(printTeacher({ firstName: "Sarah", lastName: "Smith" })); 
+
+// ["return `${firstName}. ${lastName}`"]
