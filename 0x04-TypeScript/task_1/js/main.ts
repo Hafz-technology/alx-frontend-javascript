@@ -132,6 +132,7 @@ console.log(printTeacher({ firstName: "Sarah", lastName: "Smith" }));
 
 
 
+// task_1/js/main.ts doesn't contain: ["class StudentClass {"]
 // Interface describing the constructor for StudentClass
 interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
