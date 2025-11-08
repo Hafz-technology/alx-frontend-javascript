@@ -113,7 +113,7 @@ interface printTeacherFunction {
 
 function printTeacher({ firstName, lastName }: PrintTeacherArgs): string {
   const firstInitial = firstName.charAt(0).toUpperCase();
-  return `${firstInitial}. ${lastName}`;
+  return `${firstName.charAt(0).toUpperCase()}. ${lastName}`;
 }
 
 // Example usage (optional, for testing)
